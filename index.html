@@ -11,6 +11,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         :root {
             --apple-blue: #0071e3;
             --apple-dark: #1d1d1f;
@@ -55,6 +59,7 @@
             font-size: 21px;
             font-weight: 600;
             color: var(--apple-dark);
+            cursor: pointer;
         }
 
         .nav-links {
@@ -68,6 +73,7 @@
             text-decoration: none;
             font-size: 12px;
             transition: opacity 0.3s ease;
+            cursor: pointer;
         }
 
         .nav-links a:hover {
@@ -145,6 +151,7 @@
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
+            display: inline-block;
         }
 
         .btn-primary {
@@ -437,13 +444,13 @@
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo">Vaseem Syed</div>
+            <div class="logo" onclick="scrollToSection('home')">Vaseem Syed</div>
             <ul class="nav-links">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#experience">Experience</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#contact">Contact</a></li>
+                <li><a onclick="scrollToSection('home')">Home</a></li>
+                <li><a onclick="scrollToSection('experience')">Experience</a></li>
+                <li><a onclick="scrollToSection('projects')">Projects</a></li>
+                <li><a onclick="scrollToSection('skills')">Skills</a></li>
+                <li><a onclick="scrollToSection('contact')">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -457,8 +464,8 @@
             <h2>Data Engineer & ML Specialist</h2>
             <p>Building scalable data pipelines and ML solutions that process millions of records daily. Experienced at Amazon and specializing in AWS, Python, and real-time analytics.</p>
             <div class="cta-buttons">
-                <a href="#contact" class="btn btn-primary">Get in touch</a>
-                <a href="#projects" class="btn btn-secondary">View my work</a>
+                <a onclick="scrollToSection('contact')" class="btn btn-primary">Get in touch</a>
+                <a onclick="scrollToSection('projects')" class="btn btn-secondary">View my work</a>
             </div>
             <div class="certifications">
                 <div class="cert-badge">AWS Data Engineer</div>
@@ -664,25 +671,16 @@
     </footer>
 
     <script>
-        // Wait for DOM to fully load
-        document.addEventListener('DOMContentLoaded', function() {
-            // Smooth scroll for all anchor links
-            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-                anchor.addEventListener('click', function (e) {
-                    e.preventDefault();
-                    const targetId = this.getAttribute('href');
-                    const target = document.querySelector(targetId);
-                    
-                    if (target) {
-                        const offsetTop = target.offsetTop - 44;
-                        window.scrollTo({
-                            top: offsetTop,
-                            behavior: 'smooth'
-                        });
-                    }
+        function scrollToSection(sectionId) {
+            const section = document.getElementById(sectionId);
+            if (section) {
+                const offsetTop = section.offsetTop - 44;
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
                 });
-            });
-        });
+            }
+        }
     </script>
 </body>
 </html>
