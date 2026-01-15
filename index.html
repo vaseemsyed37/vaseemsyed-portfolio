@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaseem Syed - Data Engineer</title>
-    <link href="https://fonts.googleapis.com/css2?family=SF+Pro+Display:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -29,7 +28,6 @@
             -moz-osx-font-smoothing: grayscale;
         }
 
-        /* Navbar - Apple Style */
         nav {
             position: fixed;
             top: 0;
@@ -42,12 +40,6 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            animation: fadeIn 0.6s ease;
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
         }
 
         .nav-container {
@@ -63,7 +55,6 @@
             font-size: 21px;
             font-weight: 600;
             color: var(--apple-dark);
-            letter-spacing: -0.5px;
         }
 
         .nav-links {
@@ -76,8 +67,6 @@
             color: var(--apple-dark);
             text-decoration: none;
             font-size: 12px;
-            font-weight: 400;
-            letter-spacing: -0.01em;
             transition: opacity 0.3s ease;
         }
 
@@ -85,7 +74,6 @@
             opacity: 0.6;
         }
 
-        /* Hero Section - Apple Style */
         .hero {
             min-height: 100vh;
             display: flex;
@@ -100,57 +88,10 @@
             text-align: center;
         }
 
-        .hero h1 {
-            font-size: 80px;
-            font-weight: 600;
-            line-height: 1.05;
-            letter-spacing: -0.015em;
-            color: var(--apple-dark);
-            margin-bottom: 16px;
-            opacity: 0;
-            animation: slideUp 1s ease 0.2s forwards;
-        }
-
-        @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .hero h2 {
-            font-size: 28px;
-            font-weight: 400;
-            line-height: 1.2;
-            letter-spacing: 0.007em;
-            color: var(--apple-gray);
-            margin-bottom: 24px;
-            opacity: 0;
-            animation: slideUp 1s ease 0.4s forwards;
-        }
-
-        .hero p {
-            font-size: 21px;
-            font-weight: 400;
-            line-height: 1.4;
-            color: var(--apple-gray);
-            max-width: 650px;
-            margin: 0 auto 40px;
-            opacity: 0;
-            animation: slideUp 1s ease 0.6s forwards;
-        }
-
-        /* Profile Image Styles */
         .profile-image-container {
             margin: 0 auto 32px;
             width: 160px;
             height: 160px;
-            opacity: 0;
-            animation: scaleIn 1s ease 0s forwards;
         }
 
         .profile-image {
@@ -158,21 +99,42 @@
             height: 100%;
             border-radius: 50%;
             object-fit: cover;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            transition: transform 0.4s ease;
         }
 
         .profile-image:hover {
             transform: scale(1.05);
-            box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15), 0 20px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .hero h1 {
+            font-size: 80px;
+            font-weight: 600;
+            line-height: 1.05;
+            color: var(--apple-dark);
+            margin-bottom: 16px;
+        }
+
+        .hero h2 {
+            font-size: 28px;
+            font-weight: 400;
+            color: var(--apple-gray);
+            margin-bottom: 24px;
+        }
+
+        .hero p {
+            font-size: 21px;
+            line-height: 1.4;
+            color: var(--apple-gray);
+            max-width: 650px;
+            margin: 0 auto 40px;
         }
 
         .cta-buttons {
             display: flex;
             gap: 20px;
             justify-content: center;
-            opacity: 0;
-            animation: slideUp 1s ease 0.8s forwards;
+            margin-bottom: 40px;
         }
 
         .btn {
@@ -180,11 +142,9 @@
             border-radius: 980px;
             text-decoration: none;
             font-size: 17px;
-            font-weight: 400;
             transition: all 0.3s ease;
             border: none;
             cursor: pointer;
-            letter-spacing: -0.022em;
         }
 
         .btn-primary {
@@ -207,7 +167,22 @@
             color: white;
         }
 
-        /* Section Styles */
+        .certifications {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .cert-badge {
+            padding: 10px 18px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            color: white;
+            font-size: 13px;
+            font-weight: 500;
+        }
+
         .section {
             padding: 100px 5%;
             max-width: 980px;
@@ -217,8 +192,6 @@
         .section-dark {
             background: var(--apple-dark);
             color: var(--apple-white);
-            margin: 0;
-            max-width: 100%;
             padding: 100px 5%;
         }
 
@@ -230,20 +203,11 @@
         .section-title {
             font-size: 48px;
             font-weight: 600;
-            line-height: 1.08;
-            letter-spacing: -0.003em;
             margin-bottom: 16px;
-            color: var(--apple-dark);
-        }
-
-        .section-dark .section-title {
-            color: var(--apple-white);
         }
 
         .section-subtitle {
             font-size: 21px;
-            font-weight: 400;
-            line-height: 1.4;
             color: var(--apple-gray);
         }
 
@@ -251,7 +215,6 @@
             color: rgba(255, 255, 255, 0.7);
         }
 
-        /* Experience Cards - Apple Card Style */
         .experience-grid {
             display: flex;
             flex-direction: column;
@@ -262,25 +225,18 @@
             background: white;
             border-radius: 18px;
             padding: 40px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 12px 24px rgba(0, 0, 0, 0.07);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .experience-card.visible {
-            animation: slideUp 0.6s ease forwards;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.4s ease;
         }
 
         .experience-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
         }
 
         .experience-header {
             display: flex;
             justify-content: space-between;
-            align-items: start;
             margin-bottom: 24px;
             padding-bottom: 24px;
             border-bottom: 1px solid rgba(0, 0, 0, 0.06);
@@ -289,22 +245,18 @@
         .experience-header h3 {
             font-size: 28px;
             font-weight: 600;
-            letter-spacing: -0.003em;
-            color: var(--apple-dark);
             margin-bottom: 8px;
         }
 
-        .experience-header .company {
+        .company {
             font-size: 17px;
             color: var(--apple-blue);
             font-weight: 500;
         }
 
-        .experience-header .date {
+        .date {
             color: var(--apple-gray);
             font-size: 14px;
-            text-align: right;
-            white-space: nowrap;
         }
 
         .experience-card ul {
@@ -317,10 +269,8 @@
         .experience-card li {
             padding-left: 24px;
             position: relative;
-            color: var(--apple-dark);
             font-size: 17px;
             line-height: 1.47;
-            letter-spacing: -0.022em;
         }
 
         .experience-card li::before {
@@ -334,7 +284,6 @@
             border-radius: 50%;
         }
 
-        /* Projects - Apple Product Style */
         .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -345,26 +294,13 @@
             background: white;
             border-radius: 18px;
             overflow: hidden;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07), 0 12px 24px rgba(0, 0, 0, 0.07);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            opacity: 0;
-            transform: scale(0.95);
-        }
-
-        .project-card.visible {
-            animation: scaleIn 0.6s ease forwards;
-        }
-
-        @keyframes scaleIn {
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
+            transition: all 0.4s ease;
         }
 
         .project-card:hover {
-            transform: translateY(-4px) scale(1.02);
-            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1), 0 16px 32px rgba(0, 0, 0, 0.1);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 12px rgba(0, 0, 0, 0.1);
         }
 
         .project-image {
@@ -374,7 +310,6 @@
             align-items: center;
             justify-content: center;
             font-size: 48px;
-            color: white;
         }
 
         .project-content {
@@ -384,8 +319,6 @@
         .project-card h3 {
             font-size: 24px;
             font-weight: 600;
-            letter-spacing: -0.003em;
-            color: var(--apple-dark);
             margin-bottom: 12px;
         }
 
@@ -407,31 +340,19 @@
             background: var(--apple-light-gray);
             border-radius: 12px;
             font-size: 12px;
-            color: var(--apple-dark);
-            font-weight: 500;
-            letter-spacing: -0.01em;
         }
 
-        /* Skills - Clean Grid */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
-        }
-
-        .skill-category {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-
-        .skill-category.visible {
-            animation: slideUp 0.6s ease forwards;
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         .skill-category h3 {
             font-size: 24px;
             font-weight: 600;
-            letter-spacing: -0.003em;
             color: var(--apple-white);
             margin-bottom: 20px;
             padding-bottom: 12px;
@@ -457,10 +378,8 @@
             position: absolute;
             left: 0;
             color: var(--apple-blue);
-            font-weight: bold;
         }
 
-        /* Contact Section */
         .contact-content {
             text-align: center;
             max-width: 650px;
@@ -485,7 +404,6 @@
             color: var(--apple-dark);
             text-decoration: none;
             font-size: 17px;
-            font-weight: 400;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
         }
@@ -495,115 +413,21 @@
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
         }
 
-        .contact-link svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* Footer */
         footer {
             text-align: center;
             padding: 40px 20px;
             color: var(--apple-gray);
             font-size: 14px;
-            background: var(--apple-white);
             border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
-        /* Certifications Badge */
-        .certifications {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        .cert-badge {
-            padding: 10px 18px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            border-radius: 20px;
-            color: white;
-            font-size: 13px;
-            font-weight: 500;
-            letter-spacing: -0.01em;
-            opacity: 0;
-            animation: slideUp 0.6s ease forwards;
-        }
-
-        .cert-badge:nth-child(1) { animation-delay: 1s; }
-        .cert-badge:nth-child(2) { animation-delay: 1.1s; }
-        .cert-badge:nth-child(3) { animation-delay: 1.2s; }
-
-        /* Responsive */
         @media (max-width: 768px) {
-            .hero h1 {
-                font-size: 48px;
-            }
-
-            .hero h2 {
-                font-size: 21px;
-            }
-
-            .hero p {
-                font-size: 17px;
-            }
-
-            .section-title {
-                font-size: 32px;
-            }
-
-            .nav-links {
-                display: none;
-            }
-
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .cta-buttons {
-                flex-direction: column;
-                width: 100%;
-                max-width: 300px;
-                margin: 0 auto;
-            }
-
-            .btn {
-                width: 100%;
-            }
-
-            .experience-header {
-                flex-direction: column;
-                gap: 8px;
-            }
-
-            .experience-header .date {
-                text-align: left;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .hero h1 {
-                font-size: 36px;
-            }
-
-            .section {
-                padding: 60px 5%;
-            }
-
-            .section-dark {
-                padding: 60px 5%;
-            }
-        }
-
-        /* Scroll Animation Observer */
-        .animate-on-scroll {
-            opacity: 0;
-            transform: translateY(30px);
-        }
-
-        .animate-on-scroll.visible {
-            animation: slideUp 0.6s ease forwards;
+            .hero h1 { font-size: 48px; }
+            .hero h2 { font-size: 21px; }
+            .section-title { font-size: 32px; }
+            .nav-links { display: none; }
+            .projects-grid { grid-template-columns: 1fr; }
+            .cta-buttons { flex-direction: column; }
         }
     </style>
 </head>
@@ -621,7 +445,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <div class="profile-image-container">
@@ -642,14 +465,13 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience" class="section">
         <div class="section-header">
             <h2 class="section-title">Experience</h2>
             <p class="section-subtitle">Building data solutions at scale</p>
         </div>
         <div class="experience-grid">
-            <div class="experience-card animate-on-scroll">
+            <div class="experience-card">
                 <div class="experience-header">
                     <div>
                         <h3>Software Data Engineer</h3>
@@ -660,11 +482,11 @@
                 <ul>
                     <li>Developed 5+ production RESTful APIs using Python/FastAPI on AWS enabling real-time access to customer segmentation and product analytics data with sub-200ms response times</li>
                     <li>Built ETL data pipelines processing 1M+ customer transaction records using Python, SQL, and Databricks for e-commerce clients</li>
-                    <li>Implemented automated data quality validation frameworks processing 100K+ daily records to ensure data accuracy for customer analytics and inventory management</li>
+                    <li>Implemented automated data quality validation frameworks processing 100K+ daily records</li>
                 </ul>
             </div>
 
-            <div class="experience-card animate-on-scroll">
+            <div class="experience-card">
                 <div class="experience-header">
                     <div>
                         <h3>Data Engineer I</h3>
@@ -673,38 +495,36 @@
                     <div class="date">Aug 2020 – Jun 2022</div>
                 </div>
                 <ul>
-                    <li>Built production ETL pipelines with Python and Apache Spark processing 5M+ daily voice interactions across 15+ markets, supporting ML model training for Alexa</li>
-                    <li>Optimized Redshift data warehouse performance by 3x through strategic partitioning and query tuning, reducing retrieval times from over 6 hours to under 20 minutes</li>
-                    <li>Designed scalable AWS data pipelines ingesting 100TB+ annually with 99.5%+ uptime for ML applications using S3, Glue, Lambda, and Athena</li>
-                    <li>Implemented CloudWatch monitoring and Python automation reducing manual troubleshooting time by 40% through automated error detection</li>
-                    <li>Collaborated with 50+ engineers across 3 offices to deliver 10+ data solutions supporting Alexa natural language understanding features</li>
+                    <li>Built production ETL pipelines with Python and Apache Spark processing 5M+ daily voice interactions across 15+ markets</li>
+                    <li>Optimized Redshift data warehouse performance by 3x, reducing retrieval times from over 6 hours to under 20 minutes</li>
+                    <li>Designed scalable AWS data pipelines ingesting 100TB+ annually with 99.5%+ uptime</li>
+                    <li>Implemented CloudWatch monitoring and Python automation reducing manual troubleshooting by 40%</li>
                 </ul>
             </div>
 
-            <div class="experience-card animate-on-scroll">
+            <div class="experience-card">
                 <div class="experience-header">
                     <div>
-                        <h3>ML Data Associate II, AVOC</h3>
+                        <h3>ML Data Associate II</h3>
                         <div class="company">Amazon Robotics</div>
                     </div>
                     <div class="date">Aug 2019 – Jul 2020</div>
                 </div>
                 <ul>
-                    <li>Labeled 100,000+ images with 98%+ accuracy for computer vision object detection models supporting warehouse robotics automation</li>
-                    <li>Developed Python automation scripts reducing manual annotation processing time by 30% and improving team productivity</li>
+                    <li>Labeled 100,000+ images with 98%+ accuracy for computer vision object detection models</li>
+                    <li>Developed Python automation scripts reducing manual annotation processing time by 30%</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="section">
         <div class="section-header">
             <h2 class="section-title">Featured Projects</h2>
             <p class="section-subtitle">Innovative data solutions</p>
         </div>
         <div class="projects-grid">
-            <div class="project-card animate-on-scroll">
+            <div class="project-card">
                 <div class="project-image">📊</div>
                 <div class="project-content">
                     <h3>Real-Time E-Commerce Analytics Pipeline</h3>
@@ -718,11 +538,11 @@
                 </div>
             </div>
 
-            <div class="project-card animate-on-scroll">
+            <div class="project-card">
                 <div class="project-image">🔒</div>
                 <div class="project-content">
                     <h3>Real-Time Fraud Detection System</h3>
-                    <p>Developed fraud detection pipeline using AWS Kinesis for streaming and SageMaker for ML deployment. Reduced detection time by 60% and enhanced data integrity for transaction processing.</p>
+                    <p>Developed fraud detection pipeline using AWS Kinesis for streaming and SageMaker for ML deployment. Reduced detection time by 60% and enhanced data integrity.</p>
                     <div class="tech-tags">
                         <span class="tech-tag">AWS Kinesis</span>
                         <span class="tech-tag">SageMaker</span>
@@ -734,14 +554,13 @@
         </div>
     </section>
 
-    <!-- Skills Section -->
     <section id="skills" class="section-dark">
         <div class="section-header">
             <h2 class="section-title">Technical Skills</h2>
             <p class="section-subtitle">Expertise across the modern data stack</p>
         </div>
         <div class="skills-grid">
-            <div class="skill-category animate-on-scroll">
+            <div class="skill-category">
                 <h3>Languages</h3>
                 <ul>
                     <li>Python</li>
@@ -752,7 +571,7 @@
                 </ul>
             </div>
 
-            <div class="skill-category animate-on-scroll">
+            <div class="skill-category">
                 <h3>Big Data & Streaming</h3>
                 <ul>
                     <li>Apache Spark</li>
@@ -763,7 +582,7 @@
                 </ul>
             </div>
 
-            <div class="skill-category animate-on-scroll">
+            <div class="skill-category">
                 <h3>Cloud & Warehousing</h3>
                 <ul>
                     <li>AWS (S3, Glue, Redshift)</li>
@@ -774,7 +593,7 @@
                 </ul>
             </div>
 
-            <div class="skill-category animate-on-scroll">
+            <div class="skill-category">
                 <h3>Data Tools</h3>
                 <ul>
                     <li>dbt</li>
@@ -786,7 +605,7 @@
                 </ul>
             </div>
 
-            <div class="skill-category animate-on-scroll">
+            <div class="skill-category">
                 <h3>Databases & DevOps</h3>
                 <ul>
                     <li>PostgreSQL</li>
@@ -798,7 +617,7 @@
                 </ul>
             </div>
 
-            <div class="skill-category animate-on-scroll">
+            <div class="skill-category">
                 <h3>ML & Processing</h3>
                 <ul>
                     <li>Pandas</li>
@@ -811,26 +630,25 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="section">
         <div class="contact-content">
             <h2 class="section-title">Let's connect</h2>
             <p class="section-subtitle">I'm always open to discussing new opportunities, interesting projects, or just connecting with fellow data enthusiasts.</p>
             <div class="contact-links">
-                <a href="/cdn-cgi/l/email-protection#e89b918d9e899b8d8da88f85898184c68b8785" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+                <a href="mailto:syevasee@gmail.com" class="contact-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
                     Email
                 </a>
                 <a href="https://linkedin.com/in/vaseemsyed25" target="_blank" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
                     LinkedIn
                 </a>
                 <a href="https://github.com/vaseemsyed37" target="_blank" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg>
                     GitHub
                 </a>
                 <a href="tel:+15512083752" class="contact-link">
-                    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M20.01 15.38c-1.23 0-2.42-.2-3.53-.56-.35-.12-.74-.03-1.01.24l-1.57 1.97c-2.83-1.35-5.48-3.9-6.89-6.83l1.95-1.66c.27-.28.35-.67.24-1.02-.37-1.11-.56-2.3-.56-3.53 0-.54-.45-.99-.99-.99H4.19C3.65 3 3 3.24 3 3.99 3 13.28 10.73 21 20.01 21c.71 0 .99-.63.99-1.18v-3.45c0-.54-.45-.99-.99-.99z"/></svg>
                     Phone
                 </a>
             </div>
@@ -841,47 +659,20 @@
         <p>© 2025 Vaseem Syed. All rights reserved.</p>
     </footer>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Intersection Observer for scroll animations
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 100);
-                }
-            });
-        }, observerOptions);
-
-        // Observe all animated elements
-        document.querySelectorAll('.animate-on-scroll, .experience-card, .project-card, .skill-category').forEach((el) => {
-            observer.observe(el);
-        });
-
-        // Smooth scroll for navigation links
+    <script>
+        // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offset = 44; // navbar height
-                    const targetPosition = target.offsetTop - offset;
                     window.scrollTo({
-                        top: targetPosition,
+                        top: target.offsetTop - 44,
                         behavior: 'smooth'
                     });
                 }
             });
         });
-
-        // Parallax effect for hero
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero && scrolled < window.innerHeight) {
-                hero.style.transform = `translateY(${s
+    </script>
+</body>
+</html>
