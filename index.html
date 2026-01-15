@@ -5,31 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vaseem Syed - Data Engineer</title>
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        :root {
-            --apple-blue: #0071e3;
-            --apple-dark: #1d1d1f;
-            --apple-gray: #86868b;
-            --apple-light-gray: #f5f5f7;
-            --apple-white: #fbfbfd;
-        }
-
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        html { scroll-behavior: smooth; scroll-padding-top: 50px; }
+        
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', Roboto, sans-serif;
-            background: var(--apple-white);
-            color: var(--apple-dark);
-            overflow-x: hidden;
-            -webkit-font-smoothing: antialiased;
-            -moz-osx-font-smoothing: grayscale;
+            background: #fbfbfd;
+            color: #1d1d1f;
         }
 
         nav {
@@ -38,7 +21,7 @@
             width: 100%;
             height: 44px;
             background: rgba(251, 251, 253, 0.8);
-            backdrop-filter: saturate(180%) blur(20px);
+            backdrop-filter: blur(20px);
             z-index: 1000;
             border-bottom: 1px solid rgba(0, 0, 0, 0.1);
             display: flex;
@@ -55,12 +38,7 @@
             align-items: center;
         }
 
-        .logo {
-            font-size: 21px;
-            font-weight: 600;
-            color: var(--apple-dark);
-            cursor: pointer;
-        }
+        .logo { font-size: 21px; font-weight: 600; }
 
         .nav-links {
             display: flex;
@@ -69,30 +47,21 @@
         }
 
         .nav-links a {
-            color: var(--apple-dark);
+            color: #1d1d1f;
             text-decoration: none;
             font-size: 12px;
-            transition: opacity 0.3s ease;
-            cursor: pointer;
+            transition: opacity 0.3s;
         }
 
-        .nav-links a:hover {
-            opacity: 0.6;
-        }
+        .nav-links a:hover { opacity: 0.6; }
 
         .hero {
-            min-height: auto;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             padding: 70px 5% 30px;
-            background: linear-gradient(180deg, var(--apple-white) 0%, var(--apple-light-gray) 100%);
-        }
-
-        .hero-content {
-            max-width: 980px;
+            background: linear-gradient(180deg, #fbfbfd 0%, #f5f5f7 100%);
             text-align: center;
         }
+
+        .hero-content { max-width: 980px; margin: 0 auto; }
 
         .profile-image-container {
             margin: 0 auto 20px;
@@ -106,34 +75,27 @@
             border-radius: 50%;
             object-fit: cover;
             box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-            transition: transform 0.4s ease;
-        }
-
-        .profile-image:hover {
-            transform: scale(1.05);
         }
 
         .hero h1 {
             font-size: 56px;
             font-weight: 600;
-            line-height: 1.05;
-            color: var(--apple-dark);
             margin-bottom: 8px;
         }
 
         .hero h2 {
             font-size: 21px;
             font-weight: 400;
-            color: var(--apple-gray);
+            color: #86868b;
             margin-bottom: 12px;
         }
 
         .hero p {
             font-size: 17px;
-            line-height: 1.4;
-            color: var(--apple-gray);
+            color: #86868b;
             max-width: 650px;
             margin: 0 auto 20px;
+            line-height: 1.4;
         }
 
         .cta-buttons {
@@ -148,29 +110,25 @@
             border-radius: 980px;
             text-decoration: none;
             font-size: 15px;
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
             display: inline-block;
+            transition: all 0.3s;
         }
 
         .btn-primary {
-            background: var(--apple-blue);
+            background: #0071e3;
             color: white;
         }
 
-        .btn-primary:hover {
-            background: #0077ed;
-        }
+        .btn-primary:hover { background: #0077ed; }
 
         .btn-secondary {
             background: transparent;
-            color: var(--apple-blue);
-            border: 1px solid var(--apple-blue);
+            color: #0071e3;
+            border: 1px solid #0071e3;
         }
 
         .btn-secondary:hover {
-            background: var(--apple-blue);
+            background: #0071e3;
             color: white;
         }
 
@@ -187,7 +145,6 @@
             border-radius: 16px;
             color: white;
             font-size: 11px;
-            font-weight: 500;
         }
 
         .section {
@@ -197,8 +154,8 @@
         }
 
         .section-dark {
-            background: var(--apple-dark);
-            color: var(--apple-white);
+            background: #1d1d1f;
+            color: #fbfbfd;
             padding: 40px 5%;
         }
 
@@ -215,12 +172,10 @@
 
         .section-subtitle {
             font-size: 17px;
-            color: var(--apple-gray);
+            color: #86868b;
         }
 
-        .section-dark .section-subtitle {
-            color: rgba(255, 255, 255, 0.7);
-        }
+        .section-dark .section-subtitle { color: rgba(255, 255, 255, 0.7); }
 
         .experience-grid {
             display: flex;
@@ -233,7 +188,7 @@
             border-radius: 16px;
             padding: 28px;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-            transition: all 0.4s ease;
+            transition: all 0.4s;
         }
 
         .experience-card:hover {
@@ -251,20 +206,16 @@
 
         .experience-header h3 {
             font-size: 22px;
-            font-weight: 600;
             margin-bottom: 4px;
         }
 
         .company {
             font-size: 15px;
-            color: var(--apple-blue);
+            color: #0071e3;
             font-weight: 500;
         }
 
-        .date {
-            color: var(--apple-gray);
-            font-size: 12px;
-        }
+        .date { color: #86868b; font-size: 12px; }
 
         .experience-card ul {
             list-style: none;
@@ -287,7 +238,7 @@
             top: 7px;
             width: 4px;
             height: 4px;
-            background: var(--apple-blue);
+            background: #0071e3;
             border-radius: 50%;
         }
 
@@ -302,7 +253,7 @@
             border-radius: 16px;
             overflow: hidden;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.07);
-            transition: all 0.4s ease;
+            transition: all 0.4s;
         }
 
         .project-card:hover {
@@ -319,20 +270,17 @@
             font-size: 40px;
         }
 
-        .project-content {
-            padding: 20px;
-        }
+        .project-content { padding: 20px; }
 
         .project-card h3 {
             font-size: 20px;
-            font-weight: 600;
             margin-bottom: 8px;
         }
 
         .project-card p {
             font-size: 14px;
             line-height: 1.5;
-            color: var(--apple-gray);
+            color: #86868b;
             margin-bottom: 14px;
         }
 
@@ -344,7 +292,7 @@
 
         .tech-tag {
             padding: 4px 10px;
-            background: var(--apple-light-gray);
+            background: #f5f5f7;
             border-radius: 8px;
             font-size: 11px;
         }
@@ -359,8 +307,7 @@
 
         .skill-category h3 {
             font-size: 18px;
-            font-weight: 600;
-            color: var(--apple-white);
+            color: #fbfbfd;
             margin-bottom: 14px;
             padding-bottom: 8px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.15);
@@ -384,7 +331,7 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: var(--apple-blue);
+            color: #0071e3;
         }
 
         .contact-content {
@@ -408,11 +355,11 @@
             padding: 8px 16px;
             background: white;
             border-radius: 980px;
-            color: var(--apple-dark);
+            color: #1d1d1f;
             text-decoration: none;
             font-size: 14px;
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: all 0.3s ease;
+            transition: all 0.3s;
         }
 
         .contact-link:hover {
@@ -423,34 +370,29 @@
         footer {
             text-align: center;
             padding: 24px 20px;
-            color: var(--apple-gray);
+            color: #86868b;
             font-size: 12px;
             border-top: 1px solid rgba(0, 0, 0, 0.06);
         }
 
         @media (max-width: 768px) {
             .hero h1 { font-size: 36px; }
-            .hero h2 { font-size: 18px; }
-            .hero p { font-size: 15px; }
-            .section-title { font-size: 28px; }
             .nav-links { display: none; }
             .projects-grid { grid-template-columns: 1fr; }
-            .cta-buttons { flex-direction: column; width: 100%; max-width: 280px; margin: 0 auto 20px; }
-            .btn { width: 100%; }
-            .experience-header { flex-direction: column; gap: 4px; }
+            .experience-header { flex-direction: column; }
         }
     </style>
 </head>
 <body>
     <nav>
         <div class="nav-container">
-            <div class="logo" onclick="scrollToSection('home')">Vaseem Syed</div>
+            <div class="logo">Vaseem Syed</div>
             <ul class="nav-links">
-                <li><a onclick="scrollToSection('home')">Home</a></li>
-                <li><a onclick="scrollToSection('experience')">Experience</a></li>
-                <li><a onclick="scrollToSection('projects')">Projects</a></li>
-                <li><a onclick="scrollToSection('skills')">Skills</a></li>
-                <li><a onclick="scrollToSection('contact')">Contact</a></li>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#contact">Contact</a></li>
             </ul>
         </div>
     </nav>
@@ -464,8 +406,8 @@
             <h2>Data Engineer & ML Specialist</h2>
             <p>Building scalable data pipelines and ML solutions that process millions of records daily. Experienced at Amazon and specializing in AWS, Python, and real-time analytics.</p>
             <div class="cta-buttons">
-                <a onclick="scrollToSection('contact')" class="btn btn-primary">Get in touch</a>
-                <a onclick="scrollToSection('projects')" class="btn btn-secondary">View my work</a>
+                <a href="#contact" class="btn btn-primary">Get in touch</a>
+                <a href="#projects" class="btn btn-secondary">View my work</a>
             </div>
             <div class="certifications">
                 <div class="cert-badge">AWS Data Engineer</div>
@@ -581,7 +523,6 @@
                     <li>Shell Scripting</li>
                 </ul>
             </div>
-
             <div class="skill-category">
                 <h3>Big Data & Streaming</h3>
                 <ul>
@@ -592,7 +533,6 @@
                     <li>Databricks</li>
                 </ul>
             </div>
-
             <div class="skill-category">
                 <h3>Cloud & Warehousing</h3>
                 <ul>
@@ -603,7 +543,6 @@
                     <li>BigQuery</li>
                 </ul>
             </div>
-
             <div class="skill-category">
                 <h3>Data Tools</h3>
                 <ul>
@@ -615,7 +554,6 @@
                     <li>Tableau</li>
                 </ul>
             </div>
-
             <div class="skill-category">
                 <h3>Databases & DevOps</h3>
                 <ul>
@@ -627,7 +565,6 @@
                     <li>Git & CI/CD</li>
                 </ul>
             </div>
-
             <div class="skill-category">
                 <h3>ML & Processing</h3>
                 <ul>
@@ -669,18 +606,5 @@
     <footer>
         <p>© 2025 Vaseem Syed. All rights reserved.</p>
     </footer>
-
-    <script>
-        function scrollToSection(sectionId) {
-            const section = document.getElementById(sectionId);
-            if (section) {
-                const offsetTop = section.offsetTop - 44;
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-            }
-        }
-    </script>
 </body>
 </html>
